@@ -43,14 +43,14 @@ st.sidebar.header("User Input Parameters")
 ##create function for User input
 def get_user_input():
     housing_median_age = st.sidebar.slider("How old is the median house in the district?",
-                          housing["housing_median_age"].min(),
-                          housing["housing_median_age"].max(),
-                          int64(1))
+                          int(housing["housing_median_age"].min()),
+                          int(housing["housing_median_age"].max()),
+                          1)
 
     households = st.sidebar.slider("How many households are in the district?",
-                          housing["households"].min(),
-                          housing["households"].max(),
-                          int64(1))
+                          int(housing["households"].min()),
+                          int(housing["households"].max()),
+                          1)
     median_income = st.sidebar.slider("What is the median income in the district?",
                            housing["median_income"].min(),
                            housing["median_income"].max(),
