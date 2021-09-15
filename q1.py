@@ -59,10 +59,10 @@ def get_user_input():
                                       0,
                                       4,
                                       1)
-    features = pd.DataFrame({"housing_median_age":housing_median_age,
-                                                     "households":households,
-                             "median_income":median_income,
-                             "ocean_proximity":ocean_proximity}, index = [0])
+    features = pd.DataFrame({"housing_median_age": housing_median_age,
+                             "households": households,
+                             "median_income": median_income,
+                             "ocean_proximity": ocean_proximity}, index = [0])
     return features
 
 input_df = get_user_input() #get user input from sidebar
