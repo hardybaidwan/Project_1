@@ -62,7 +62,7 @@ def get_user_input():
     features = pd.DataFrame({"housing_median_age": int(housing_median_age),
                              "households": int(households),
                              "median_income": median_income,
-                             "ocean_proximity": ocean_proximity}, index = [0])
+                             "ocean_proximity": int(ocean_proximity)}, index = [0])
     return features
 # def get_user_input():
 #     housing_median_age = st.sidebar.slider("How old is the median house in the district?",
