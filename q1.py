@@ -49,11 +49,11 @@ def get_user_input():
 
     households = st.sidebar.slider("How many households are in the district?",
                           15,
-                          200,
+                          5000,
                           1)
     median_income = st.sidebar.slider("What is the median income in the district?",
-                           housing["median_income"].min(),
-                           housing["median_income"].max(),
+                           0.5,
+                           2.5,
                            1.0)
     ocean_proximity = st.sidebar.slider("What is the ocean proximity? (0->Island and 4->Inland)",
                                       0,
