@@ -48,8 +48,8 @@ def get_user_input():
                           1)
 
     households = st.sidebar.slider("How many households are in the district?",
-                          int(housing["households"].min()),
-                          int(housing["households"].max()),
+                          15,
+                          200,
                           1)
     median_income = st.sidebar.slider("What is the median income in the district?",
                            housing["median_income"].min(),
