@@ -41,28 +41,51 @@ ml_model = pickle.load(open("model.pkl", "rb")) #load the model
 st.sidebar.header("User Input Parameters")
 
 ##create function for User input
+# def get_user_input():
+#     housing_median_age = st.sidebar.slider("How old is the median house in the district?",
+#                           int(housing["housing_median_age"].min()),
+#                           int(housing["housing_median_age"].max()),
+#                           1)
+
+#     households = st.sidebar.slider("How many households are in the district?",
+#                           int(housing["households"].min()),
+#                           int(housing["households"].max()),
+#                           1)
+#     median_income = st.sidebar.slider("What is the median income in the district?",
+#                            housing["median_income"].min(),
+#                            housing["median_income"].max(),
+#                            1.0)
+#     ocean_proximity = st.sidebar.slider("What is the ocean proximity? (0->Island and 4->Inland)",
+#                                       0,
+#                                       4,
+#                                       1)
+#     features = pd.DataFrame({"housing_median_age": housing_median_age,
+#                              "households": households,
+#                              "median_income": median_income,
+#                              "ocean_proximity": ocean_proximity}, index = [0])
+#     return features
 def get_user_input():
     housing_median_age = st.sidebar.slider("How old is the median house in the district?",
-                          int(housing["housing_median_age"].min()),
-                          int(housing["housing_median_age"].max()),
-                          1)
+                                           housing["housing_median_age"].min(),
+                                           housing["housing_median_age"].max(),
+                                           1)
 
     households = st.sidebar.slider("How many households are in the district?",
-                          int(housing["households"].min()),
-                          int(housing["households"].max()),
-                          1)
+                                   housing["households"].min(),
+                                   housing["households"].max(),
+                                   1)
     median_income = st.sidebar.slider("What is the median income in the district?",
-                           housing["median_income"].min(),
-                           housing["median_income"].max(),
-                           1.0)
+                                      housing["median_income"].min(),
+                                      housing["median_income"].max(),
+                                      1.0)
     ocean_proximity = st.sidebar.slider("What is the ocean proximity? (0->Island and 4->Inland)",
-                                      0,
-                                      4,
-                                      1)
+                                        0,
+                                        4,
+                                        1)
     features = pd.DataFrame({"housing_median_age": housing_median_age,
                              "households": households,
                              "median_income": median_income,
-                             "ocean_proximity": ocean_proximity}, index = [0])
+                             "ocean_proximity": ocean_proximity}, index=[0])
     return features
 
 input_df = get_user_input() #get user input from sidebar
