@@ -15,7 +15,7 @@ st.title("Housing Price Predictions")  # you could also use st.write("# YOURTITL
 ### Displaying an image
 ## st.image allows you to display an image from a url or numpy array, a BytesIO object and more
 st.image(
-    "https://storage.googleapis.com/kaggle-datasets-images/24824/31630/a5f5ce1e4b4066d1f222e79e8286f077/dataset-cover.jpg?t=2018-05-03-00-52-48",
+    "https://www.architectureartdesigns.com/wp-content/uploads/2015/07/713.jpg",
     width=700)
 
 ##st.write allows you to write text either with single quotes for one line in markdown format
