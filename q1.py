@@ -55,10 +55,7 @@ def get_user_input():
                            0.5,
                            2.5,
                            1.0)
-    ocean_proximity = st.sidebar.slider("What is the ocean proximity? (0->Island and 4->Inland)",
-                                      0,
-                                      4,
-                                      1)
+    ocean_proximity = st.selectbox("What is the ocean proximity? (0->Island and 4->Inland)",[0,1,2,3,4])
     features = pd.DataFrame({"housing_median_age": int(housing_median_age),
                              "households": int(households),
                              "median_income": median_income,
