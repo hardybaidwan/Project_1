@@ -37,12 +37,9 @@ st.map(housing, zoom = 4.5)
 st.write("# Machine Learning App")
 ml_model = pickle.load(open("model.pkl", "rb")) #load the model
 
-##create the sidebar
-st.sidebar.header("User Input Parameters")
-
 ##create function for User input
 def get_user_input():
-    housing_median_age = st.selectbox("How old is the median house in the district?",[i for i in range(0,51)])
+    housing_median_age = st.slider("How old is the median house in the district?",0,50,1)
 
     households = st.slider("How many households are in the district?",
                           15,
