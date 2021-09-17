@@ -84,4 +84,6 @@ prediction = ml_model.predict(input_df) #get predicitions
 
 #display predictions
 st.subheader("Prediction")
-st.write("**The median price of a house in the district is: $**",str(round(prediction[0],2)))
+frm = st.button("Submit")
+if frm: 
+    st.write("**The median price of a house in the district is: $**",str(round(prediction[0],2)))
