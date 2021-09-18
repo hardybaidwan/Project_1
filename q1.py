@@ -27,10 +27,9 @@ st.write("Locations on Map")
 
 st.map(housing, zoom = 4.5)
 
-
-###Machine Learning
+##ML Model
 st.write("# Machine Learning App")
-ml_model = pickle.load(open("model.pkl", "rb")) #load the model
+ml_model = pickle.load(open("model.pkl", "rb")) #loading the model
 
 ##create function for User input
 def get_user_input():
