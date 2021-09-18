@@ -1,27 +1,22 @@
-##imports
 import streamlit as st
 import pandas as pd
 import pickle
 
 
-##read in data
+##reading dataset
 housing = pd.read_csv("housing.csv")
 housing["rooms_per_household"] = housing["total_rooms"] / housing["households"]
 
-### Displaying text
-##The title of your App can be displayed with st.title
-st.title("Housing Price Predictions")  # you could also use st.write("# YOURTITLE")
+st.title("Housing Price Predictions")  
 
-### Displaying an image
-## st.image allows you to display an image from a url or numpy array, a BytesIO object and more
+
 st.image(
     "https://www.architectureartdesigns.com/wp-content/uploads/2015/07/713.jpg",
     width=700)
 
-##st.write allows you to write text either with single quotes for one line in markdown format
-st.write("Predicting the median value of a house within a district.")
-##or with triple quotes for multiple lines
-###Displaying data
+st.write("Predicting the median value of a house in California district.")
+
+##Displaying data
 st.write("# Displaying Data")
 ##display dataframe
 ##add column selector
@@ -55,33 +50,11 @@ def get_user_input():
                              "median_income": median_income,
                              "ocean_proximity": int(ocean_proximity)}, index = [0])
     return features
-# def get_user_input():
-#     housing_median_age = st.sidebar.slider("How old is the median house in the district?",
-#                                            housing["housing_median_age"].min(),
-#                                            housing["housing_median_age"].max(),
-#                                            int64(1))
 
-#     households = st.sidebar.slider("How many households are in the district?",
-#                                    housing["households"].min(),
-#                                    housing["households"].max(),
-#                                    int64(1))
-#     median_income = st.sidebar.slider("What is the median income in the district?",
-#                                       housing["median_income"].min(),
-#                                       housing["median_income"].max(),
-#                                       1.0)
-#     ocean_proximity = st.sidebar.slider("What is the ocean proximity? (0->Island and 4->Inland)",
-#                                         0,
-#                                         4,
-#                                         1)
-#     features = pd.DataFrame({"housing_median_age": housing_median_age,
-#                              "households": households,
-#                              "median_income": median_income,
-#                              "ocean_proximity": ocean_proximity}, index=[0])
-#     return features
 
 input_df = get_user_input() #get user input from sidebar
 prediction = ml_model.predict(input_df) #get predicitions
 
 frm = st.button("Submit")
 if frm: 
-    st.write("**The median price of a house in the district is: $**",str(round(prediction[0],2)))
+    st.write("**The median price of a house is: $**",str(round(prediction[0],2)))
