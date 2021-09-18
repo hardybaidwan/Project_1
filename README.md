@@ -13,6 +13,10 @@ Then we show the location of the houses on the map of California.
 
 Inside our model,we drop the null values before applying our model on it
 Also ignore the unwanted columns for our model
-And apply Random Forest on the remaining dataset which gives 75% accuracy
+
+Splitting test:train in 20:80.
+And apply Random Forest on the remaining dataset which gives 75% accuracy.
+
+This makes a model.pkl file which is loaded in our python file for calculating the outputs from user inputs.
 
 ![image](https://user-images.githubusercontent.com/67311692/133880191-5d6c8ee0-31af-49dd-b115-c55af16ec1bb.png)
